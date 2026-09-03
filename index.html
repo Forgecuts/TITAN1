@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +9,113 @@
 <title>Trade With Titans | Telegram Community</title>
 
 <meta name="description"
-content="Join Trade With Titans on Telegram for market insights, trading updates, educational content and community discussions.">
+content="Join Trade With Titans on Telegram for market insights, trading updates and community discussions.">
 
 <meta name="robots" content="index,follow">
 
-<style>
+<!-- ================================
+     META PIXEL
+================================ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{
+    if(f.fbq)return;
 
-/* =====================================================
-   RESET
-===================================================== */
+    n=f.fbq=function(){
+        n.callMethod ?
+        n.callMethod.apply(n,arguments) :
+        n.queue.push(arguments)
+    };
+
+    if(!f._fbq)f._fbq=n;
+
+    n.push=n;
+    n.loaded=!0;
+    n.version='2.0';
+    n.queue=[];
+
+    t=b.createElement(e);
+    t.async=!0;
+    t.src=v;
+
+    s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s);
+
+}
+(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','1591760419216164');
+
+/* Standard page visit */
+fbq('track','PageView');
+</script>
+
+<noscript>
+<img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
+>
+</noscript>
+
+
+<!-- ================================
+     EVENT TRACKING
+================================ -->
+<script>
+
+/*
+================================================
+TELEGRAM SUBSCRIBE EVENT
+
+This fires when a visitor clicks either
+Telegram Join button.
+
+You can change 'Subscribe' later if required.
+================================================
+*/
+
+function trackTelegramSubscribe(){
+
+    if(typeof fbq === 'function'){
+
+        fbq('track','Subscribe');
+
+    }
+
+}
+
+
+/*
+================================================
+TELEGRAM LEAD EVENT
+
+Use this only for enquiry/contact actions.
+
+Currently the Telegram JOIN buttons use
+Subscribe, NOT Lead.
+================================================
+*/
+
+function trackLead(){
+
+    if(typeof fbq === 'function'){
+
+        fbq('track','Lead');
+
+    }
+
+}
+
+</script>
+
+
+<!-- ================================
+     STYLE
+================================ -->
+<style>
 
 *{
     margin:0;
@@ -29,6 +128,7 @@ html{
 }
 
 body{
+
     font-family:
         Inter,
         Arial,
@@ -48,40 +148,34 @@ a{
 }
 
 
-/* =====================================================
-   COLORS
-===================================================== */
+/* ================================
+   VARIABLES
+================================ */
 
 :root{
 
     --bg:#050b16;
-
     --bg2:#081223;
 
     --panel:#0b1628;
-
     --panel2:#0e1c31;
 
     --blue:#238cff;
-
     --blue2:#1264d6;
 
     --cyan:#53d7ff;
 
     --white:#f5f8ff;
-
     --text:#b6c2d4;
-
     --muted:#718096;
 
     --border:rgba(83,215,255,.13);
-
 }
 
 
-/* =====================================================
-   BACKGROUND
-===================================================== */
+/* ================================
+   PAGE BACKGROUND
+================================ */
 
 .page{
 
@@ -132,17 +226,15 @@ a{
             transparent 1px
         );
 
-    background-size:
-        65px 65px;
+    background-size:65px 65px;
 
     pointer-events:none;
-
 }
 
 
-/* =====================================================
+/* ================================
    TOP BAR
-===================================================== */
+================================ */
 
 .topbar{
 
@@ -152,8 +244,7 @@ a{
 
     height:66px;
 
-    padding:
-        0 5%;
+    padding:0 5%;
 
     display:flex;
 
@@ -213,15 +304,13 @@ a{
 }
 
 
-/* =====================================================
+/* ================================
    MAIN
-===================================================== */
+================================ */
 
 .container{
 
-    width:92%;
-
-    max-width:1120px;
+    width:min(1180px,92%);
 
     margin:auto;
 }
@@ -233,31 +322,33 @@ a{
     z-index:2;
 
     padding:
-        70px 0
+        80px 0
         90px;
 }
 
 
-/* =====================================================
+/* ================================
    LOGO
-===================================================== */
+================================ */
 
 .logo-area{
 
-    text-align:center;
+    display:flex;
 
-    margin-bottom:22px;
+    justify-content:center;
+
+    margin-bottom:25px;
 }
 
 .logo{
 
-    width:120px;
+    width:125px;
 
-    height:120px;
+    height:125px;
 
-    margin:auto;
+    border-radius:50%;
 
-    border-radius:26px;
+    padding:5px;
 
     display:flex;
 
@@ -265,44 +356,18 @@ a{
 
     justify-content:center;
 
-    overflow:hidden;
-
-    position:relative;
-
     background:
 
         linear-gradient(
-            145deg,
-            #10233d,
-            #07101f
+            135deg,
+            #238cff,
+            #53d7ff
         );
-
-    border:
-        1px solid
-        rgba(83,215,255,.30);
 
     box-shadow:
 
-        0 0 55px
-        rgba(35,140,255,.14),
-
-        inset 0 0 30px
-        rgba(83,215,255,.04);
-}
-
-.logo:before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:6px;
-
-    border-radius:20px;
-
-    border:
-        1px solid
-        rgba(83,215,255,.08);
+        0 0 45px
+        rgba(35,140,255,.25);
 }
 
 .logo img{
@@ -311,184 +376,146 @@ a{
 
     height:100%;
 
-    object-fit:contain;
+    object-fit:cover;
 
-    position:relative;
+    border-radius:50%;
 
-    z-index:2;
+    background:#081223;
 }
 
 .logo-placeholder{
 
-    position:absolute;
+    display:none;
 
-    z-index:1;
-
-    color:#536a83;
+    text-align:center;
 
     font-size:10px;
 
-    line-height:1.3;
+    font-weight:900;
 
-    text-align:center;
+    letter-spacing:2px;
+
+    color:white;
 }
 
 
-/* =====================================================
+/* ================================
    BRAND
-===================================================== */
+================================ */
 
 .brand{
 
     text-align:center;
 
-    font-size:
-        clamp(
-            25px,
-            5vw,
-            43px
-        );
+    font-size:30px;
 
-    font-weight:950;
+    font-weight:900;
 
-    letter-spacing:3px;
+    letter-spacing:5px;
 
-    margin-bottom:8px;
+    color:white;
 }
 
 .brand span{
 
-    background:
-
-        linear-gradient(
-            90deg,
-            #53d7ff,
-            #238cff
-        );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
+    color:var(--cyan);
 }
+
+
+/* ================================
+   TAGLINE
+================================ */
 
 .tagline{
 
-    text-align:center;
+    margin-top:10px;
 
-    color:#64748a;
+    margin-bottom:65px;
+
+    text-align:center;
 
     font-size:9px;
 
-    letter-spacing:3px;
+    letter-spacing:4px;
 
-    margin-bottom:55px;
+    color:#68778d;
 }
 
 
-/* =====================================================
+/* ================================
    HERO
-===================================================== */
+================================ */
 
 .hero{
 
     display:grid;
 
     grid-template-columns:
-        1.1fr
-        .9fr;
+        1.05fr
+        .95fr;
 
     gap:20px;
 }
 
 
-/* =====================================================
-   HERO CARD
-===================================================== */
+/* HERO CARD */
 
 .hero-card{
 
-    position:relative;
+    min-height:500px;
 
-    padding:48px;
+    padding:55px 50px;
 
-    min-height:430px;
+    display:flex;
 
-    border-radius:24px;
+    flex-direction:column;
+
+    justify-content:center;
+
+    border-radius:25px;
 
     border:
         1px solid
-        var(--border);
+        rgba(83,215,255,.12);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(14,29,49,.96),
-            rgba(7,14,26,.96)
+            rgba(13,27,46,.96),
+            rgba(7,16,29,.96)
         );
 
-    overflow:hidden;
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.25);
 }
-
-.hero-card:after{
-
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-
-    height:400px;
-
-    right:-220px;
-
-    bottom:-220px;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(35,140,255,.13),
-            transparent 65%
-        );
-}
-
-
-/* small label */
 
 .label{
 
-    color:var(--cyan);
+    margin-bottom:20px;
 
     font-size:9px;
 
-    font-weight:900;
+    font-weight:800;
 
-    letter-spacing:2px;
+    letter-spacing:3px;
 
-    margin-bottom:20px;
+    color:var(--cyan);
 }
 
 .hero-card h1{
 
-    position:relative;
-
-    z-index:2;
-
     font-size:
         clamp(
-            40px,
+            42px,
             6vw,
-            67px
+            68px
         );
 
-    line-height:1;
+    line-height:.98;
 
     letter-spacing:-3px;
-
-    max-width:650px;
 }
 
 .hero-card h1 span{
@@ -498,13 +525,9 @@ a{
 
 .hero-card p{
 
-    position:relative;
-
-    z-index:2;
-
     max-width:600px;
 
-    margin-top:22px;
+    margin-top:25px;
 
     color:var(--text);
 
@@ -514,9 +537,9 @@ a{
 }
 
 
-/* =====================================================
-   BUTTON
-===================================================== */
+/* ================================
+   TELEGRAM BUTTON
+================================ */
 
 .telegram-btn{
 
@@ -534,13 +557,13 @@ a{
 
     width:100%;
 
-    max-width:340px;
+    max-width:350px;
 
-    margin-top:30px;
+    margin-top:32px;
 
-    padding:17px 23px;
+    padding:18px 25px;
 
-    border-radius:11px;
+    border-radius:12px;
 
     background:
 
@@ -550,13 +573,13 @@ a{
             #1469d7
         );
 
-    color:#fff;
+    color:white;
 
     font-size:13px;
 
-    font-weight:950;
+    font-weight:900;
 
-    letter-spacing:.5px;
+    letter-spacing:.7px;
 
     box-shadow:
 
@@ -564,6 +587,8 @@ a{
         rgba(35,140,255,.20);
 
     transition:.25s;
+
+    cursor:pointer;
 }
 
 .telegram-btn:hover{
@@ -574,14 +599,14 @@ a{
     box-shadow:
 
         0 20px 55px
-        rgba(35,140,255,.32);
+        rgba(35,140,255,.35);
 }
 
 .telegram-icon{
 
-    width:27px;
+    width:28px;
 
-    height:27px;
+    height:28px;
 
     border-radius:50%;
 
@@ -590,21 +615,21 @@ a{
     place-items:center;
 
     background:
-        rgba(0,0,0,.35);
+        rgba(0,0,0,.3);
 
     font-size:12px;
 }
 
 
-/* =====================================================
-   MARKET PANEL
-===================================================== */
+/* ================================
+   MARKET CARD
+================================ */
 
 .market-card{
 
-    padding:27px;
+    padding:30px;
 
-    border-radius:24px;
+    border-radius:25px;
 
     border:
         1px solid
@@ -617,6 +642,10 @@ a{
             #0d1b2e,
             #07101d
         );
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.20);
 }
 
 .market-head{
@@ -627,7 +656,7 @@ a{
 
     align-items:center;
 
-    padding-bottom:18px;
+    padding-bottom:20px;
 
     border-bottom:
         1px solid
@@ -645,7 +674,7 @@ a{
 
 .market-tag{
 
-    padding:5px 8px;
+    padding:6px 9px;
 
     border-radius:5px;
 
@@ -660,15 +689,17 @@ a{
 }
 
 
-/* chart */
+/* ================================
+   CHART
+================================ */
 
 .chart{
 
     position:relative;
 
-    height:220px;
+    height:280px;
 
-    margin-top:20px;
+    margin-top:25px;
 
     overflow:hidden;
 
@@ -705,7 +736,7 @@ a{
 
     stroke:#53d7ff;
 
-    stroke-width:2.5;
+    stroke-width:3;
 
     stroke-linecap:round;
 
@@ -727,12 +758,13 @@ a{
     to{
 
         stroke-dashoffset:0;
-
     }
 }
 
 
-/* chart bottom */
+/* ================================
+   MARKET DATA
+================================ */
 
 .market-bottom{
 
@@ -743,12 +775,12 @@ a{
 
     gap:10px;
 
-    margin-top:18px;
+    margin-top:20px;
 }
 
 .market-data{
 
-    padding:10px;
+    padding:13px;
 
     border-radius:8px;
 
@@ -771,7 +803,7 @@ a{
 
     display:block;
 
-    margin-top:5px;
+    margin-top:6px;
 
     color:#d9e1ed;
 
@@ -779,9 +811,9 @@ a{
 }
 
 
-/* =====================================================
+/* ================================
    FEATURES
-===================================================== */
+================================ */
 
 .features{
 
@@ -797,9 +829,9 @@ a{
 
 .feature{
 
-    padding:25px;
+    padding:28px;
 
-    border-radius:16px;
+    border-radius:17px;
 
     background:
         rgba(8,18,32,.85);
@@ -835,9 +867,9 @@ a{
 
 .feature h3{
 
-    font-size:15px;
+    font-size:16px;
 
-    margin-bottom:8px;
+    margin-bottom:9px;
 }
 
 .feature p{
@@ -850,9 +882,9 @@ a{
 }
 
 
-/* =====================================================
+/* ================================
    FINAL CTA
-===================================================== */
+================================ */
 
 .final{
 
@@ -860,7 +892,7 @@ a{
 
     text-align:center;
 
-    padding:65px 25px;
+    padding:70px 25px;
 
     border-radius:25px;
 
@@ -909,27 +941,13 @@ a{
 .final .telegram-btn{
 
     margin:
-        28px auto 0;
-}
-
-.disclaimer{
-
-    max-width:760px;
-
-    margin:
-        27px auto 0;
-
-    color:#566376;
-
-    font-size:9px;
-
-    line-height:1.7;
+        30px auto 0;
 }
 
 
-/* =====================================================
+/* ================================
    FOOTER
-===================================================== */
+================================ */
 
 footer{
 
@@ -938,8 +956,7 @@ footer{
     z-index:3;
 
     padding:
-        28px 5%
-        35px;
+        28px 5%;
 
     border-top:
         1px solid
@@ -980,9 +997,9 @@ footer{
 }
 
 
-/* =====================================================
+/* ================================
    MOBILE
-===================================================== */
+================================ */
 
 @media(max-width:800px){
 
@@ -1000,15 +1017,16 @@ footer{
 
     .logo{
 
-        width:100px;
-        height:100px;
+        width:105px;
+
+        height:105px;
     }
 
     .brand{
 
         font-size:22px;
 
-        letter-spacing:2px;
+        letter-spacing:3px;
     }
 
     .tagline{
@@ -1017,7 +1035,7 @@ footer{
 
         letter-spacing:2px;
 
-        margin-bottom:38px;
+        margin-bottom:40px;
     }
 
     .hero{
@@ -1029,14 +1047,12 @@ footer{
 
         min-height:auto;
 
-        padding:32px 24px;
+        padding:35px 25px;
     }
 
     .hero-card h1{
 
-        font-size:44px;
-
-        letter-spacing:-2px;
+        font-size:45px;
     }
 
     .hero-card p{
@@ -1049,14 +1065,19 @@ footer{
         max-width:none;
     }
 
-    .features{
-
-        grid-template-columns:1fr;
-    }
-
     .market-card{
 
         padding:22px;
+    }
+
+    .chart{
+
+        height:210px;
+    }
+
+    .features{
+
+        grid-template-columns:1fr;
     }
 
     .final{
@@ -1064,7 +1085,7 @@ footer{
         margin-top:50px;
 
         padding:
-            48px 20px;
+            50px 20px;
     }
 
     footer{
@@ -1073,41 +1094,21 @@ footer{
 
         text-align:center;
     }
-
 }
 
 </style>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1591760419216164');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 
 </head>
 
 
 <body>
 
-
 <div class="page">
 
 
-<!-- =================================================
+<!-- ================================
      TOP BAR
-================================================= -->
+================================ -->
 
 <div class="topbar">
 
@@ -1126,42 +1127,26 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 </div>
 
 
-
 <main class="main container">
 
 
-<!-- =================================================
+<!-- ================================
      LOGO
-================================================= -->
+================================ -->
 
 <div class="logo-area">
 
     <div class="logo">
 
-        <!--
-        =================================================
-        LOGO UPLOAD
-
-        Put your logo in the same folder as this file.
-
-        File name:
-
-        logo.png
-
-        =================================================
-        -->
-
         <img
             src="titans.jpeg"
-            alt="Trade With Titans Logo"
+            alt="Trade With Titans"
             onerror="this.style.display='none';"
         >
 
         <div class="logo-placeholder">
-
-            YOUR<br>
-            LOGO
-
+            TRADE<br>
+            TITANS
         </div>
 
     </div>
@@ -1169,10 +1154,9 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 </div>
 
 
-
-<!-- =================================================
+<!-- ================================
      BRAND
-================================================= -->
+================================ -->
 
 <div class="brand">
 
@@ -1189,156 +1173,155 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 </div>
 
 
-
-<!-- =================================================
+<!-- ================================
      HERO
-================================================= -->
+================================ -->
 
 <div class="hero">
 
 
-    <!-- LEFT CARD -->
+<div class="hero-card">
 
-    <div class="hero-card">
+    <div class="label">
+        OFFICIAL TELEGRAM COMMUNITY
+    </div>
 
-        <div class="label">
-            OFFICIAL TELEGRAM COMMUNITY
+
+    <h1>
+
+        CONNECT WITH
+
+        <br>
+
+        <span>TRADE WITH TITANS.</span>
+
+    </h1>
+
+
+    <p>
+
+        Join our Telegram community for
+        market insights, trading-related
+        updates, educational content and
+        community discussions.
+
+    </p>
+
+
+    <!-- =====================================
+         TELEGRAM BUTTON — SUBSCRIBE EVENT
+    ====================================== -->
+
+    <a
+        href="https://t.me/+F-sRykHqf5s0MjRl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="telegram-btn"
+        onclick="trackTelegramSubscribe();"
+    >
+
+        <span class="telegram-icon">
+            ➤
+        </span>
+
+        JOIN TRADE WITH TITANS
+
+    </a>
+
+</div>
+
+
+<!-- ================================
+     MARKET PANEL
+================================ -->
+
+<div class="market-card">
+
+    <div class="market-head">
+
+        <div class="market-title">
+            MARKET DASHBOARD
         </div>
 
-
-        <h1>
-
-            CONNECT WITH
-            <br>
-
-            <span>TRADE WITH TITANS.</span>
-
-        </h1>
-
-
-        <p>
-
-            Join our Telegram community for
-            market insights, trading-related
-            updates, educational content and
-            community discussions.
-
-        </p>
-
-
-        <a
-            href="https://t.me/+F-sRykHqf5s0MjRl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="telegram-btn"
-         onclick="if(typeof fbq===\'function\'){fbq(\'track\',\'Subscribe\');fbq(\'track\',\'Lead\');}">
-
-            <span class="telegram-icon">
-                ➤
-            </span>
-
-            JOIN TRADE WITH TITANS
-
-        </a>
+        <div class="market-tag">
+            MARKET VIEW
+        </div>
 
     </div>
 
 
+    <div class="chart">
 
-    <!-- MARKET PANEL -->
+        <svg
+            viewBox="0 0 500 220"
+            preserveAspectRatio="none"
+        >
 
-    <div class="market-card">
+            <polyline
+                class="chart-line"
+                points="
+                0,185
+                25,175
+                55,183
+                80,150
+                110,158
+                140,125
+                170,138
+                200,95
+                230,110
+                260,76
+                290,91
+                320,58
+                350,75
+                380,47
+                410,60
+                445,27
+                500,14
+                "
+            />
+
+        </svg>
+
+    </div>
 
 
-        <div class="market-head">
+    <div class="market-bottom">
 
-            <div class="market-title">
-                MARKET DASHBOARD
-            </div>
+        <div class="market-data">
 
-            <div class="market-tag">
-                LIVE STYLE
-            </div>
+            <span>
+                CONTENT
+            </span>
 
-        </div>
-
-
-        <div class="chart">
-
-            <svg
-                viewBox="0 0 500 220"
-                preserveAspectRatio="none"
-            >
-
-                <polyline
-                    class="chart-line"
-                    points="
-                    0,185
-                    25,175
-                    55,183
-                    80,150
-                    110,158
-                    140,125
-                    170,138
-                    200,95
-                    230,110
-                    260,76
-                    290,91
-                    320,58
-                    350,75
-                    380,47
-                    410,60
-                    445,27
-                    500,14
-                    "
-                />
-
-            </svg>
+            <strong>
+                INSIGHTS
+            </strong>
 
         </div>
 
 
-        <div class="market-bottom">
+        <div class="market-data">
+
+            <span>
+                UPDATES
+            </span>
+
+            <strong>
+                TELEGRAM
+            </strong>
+
+        </div>
 
 
-            <div class="market-data">
+        <div class="market-data">
 
-                <span>
-                    CONTENT
-                </span>
+            <span>
+                COMMUNITY
+            </span>
 
-                <strong>
-                    INSIGHTS
-                </strong>
-
-            </div>
-
-
-            <div class="market-data">
-
-                <span>
-                    UPDATES
-                </span>
-
-                <strong>
-                    TELEGRAM
-                </strong>
-
-            </div>
-
-
-            <div class="market-data">
-
-                <span>
-                    COMMUNITY
-                </span>
-
-                <strong>
-                    ACTIVE
-                </strong>
-
-            </div>
-
+            <strong>
+                ACTIVE
+            </strong>
 
         </div>
 
@@ -1346,90 +1329,81 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 
 </div>
 
+</div>
 
 
-<!-- =================================================
+<!-- ================================
      FEATURES
-================================================= -->
+================================ -->
 
 <div class="features">
 
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-number">
-            01 / INSIGHTS
-        </div>
-
-        <h3>
-            Market Insights
-        </h3>
-
-        <p>
-
-            Follow market observations,
-            trading discussions and useful
-            market-related information.
-
-        </p>
-
+    <div class="feature-number">
+        01 / INSIGHTS
     </div>
 
+    <h3>
+        Market Insights
+    </h3>
+
+    <p>
+        Follow market observations,
+        trading discussions and useful
+        market-related information.
+    </p>
+
+</div>
 
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-number">
-            02 / UPDATES
-        </div>
-
-        <h3>
-            Timely Updates
-        </h3>
-
-        <p>
-
-            Stay connected with relevant
-            community and market updates
-            through Telegram.
-
-        </p>
-
+    <div class="feature-number">
+        02 / UPDATES
     </div>
 
+    <h3>
+        Timely Updates
+    </h3>
+
+    <p>
+        Stay connected with relevant
+        community and market updates
+        through Telegram.
+    </p>
+
+</div>
 
 
-    <div class="feature">
+<div class="feature">
 
-        <div class="feature-number">
-            03 / COMMUNITY
-        </div>
-
-        <h3>
-            Trading Community
-        </h3>
-
-        <p>
-
-            Connect with people interested
-            in markets, trading strategies
-            and trading technology.
-
-        </p>
-
+    <div class="feature-number">
+        03 / COMMUNITY
     </div>
+
+    <h3>
+        Trading Community
+    </h3>
+
+    <p>
+        Connect with people interested
+        in markets, trading strategies
+        and trading technology.
+    </p>
+
+</div>
 
 
 </div>
 
 
-
-<!-- =================================================
+<!-- ================================
      FINAL CTA
-================================================= -->
+================================ -->
 
 <section class="final">
-
 
     <h2>
         Join The Community
@@ -1439,18 +1413,24 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
     <p>
 
         Open Telegram and connect with
-        Trade With Titans for our latest
-        market and community updates.
+        Trade With Titans for market
+        updates, insights and community
+        discussions.
 
     </p>
 
+
+    <!-- =====================================
+         TELEGRAM BUTTON — SUBSCRIBE EVENT
+    ====================================== -->
 
     <a
         href="https://t.me/+F-sRykHqf5s0MjRl"
         target="_blank"
         rel="noopener noreferrer"
         class="telegram-btn"
-     onclick="if(typeof fbq===\'function\'){fbq(\'track\',\'Subscribe\');fbq(\'track\',\'Lead\');}">
+        onclick="trackTelegramSubscribe();"
+    >
 
         <span class="telegram-icon">
             ➤
@@ -1460,33 +1440,17 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 
     </a>
 
-
-    <div class="disclaimer">
-
-        Trading involves risk. This page does not
-        promise or guarantee profits, returns or
-        trading results. Information shared in the
-        community is for informational and
-        educational purposes only and should not
-        be
-        considered financial advice.
-
-    </div>
-
-
 </section>
 
 
 </main>
 
 
-
-<!-- =================================================
+<!-- ================================
      FOOTER
-================================================= -->
+================================ -->
 
 <footer>
-
 
     <div class="footer-copy">
 
@@ -1510,7 +1474,6 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 
     </div>
 
-
 </footer>
 
 
@@ -1518,3 +1481,4 @@ src="https://www.facebook.com/tr?id=1591760419216164&ev=PageView&noscript=1"
 
 </body>
 </html>
+
